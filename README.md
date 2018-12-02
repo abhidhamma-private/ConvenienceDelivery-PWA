@@ -1,6 +1,23 @@
-# ConvenienceDelivery
-운영중인 편의점의 배달서비스를 위해 Next.js와 React로만든 PWA
+# Nuber Client
 
+Client for the (N)Uber Clone Course on Nomad Academy. ReactJS, Apollo, Typescript
 
-프론트엔드 React, Next.js
-백엔드 GraphCMS 사용
+## Screens:
+
+### Logged Out:
+
+- [ ] Home
+- [ ] Phone Login
+- [ ] Verify Phone Number
+- [ ] Social Login
+
+### Logged In:
+
+- [ ] Home
+- [ ] Ride
+- [ ] Edit Account
+- [ ] Settings
+- [ ] Places
+- [ ] Add Place
+- [ ] Find Address
+- [ ] Challenge: Ride History
