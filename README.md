@@ -1,23 +1,22 @@
-# Nuber Client
+# ConvenienceDelivery
 
-Client for the (N)Uber Clone Course on Nomad Academy. ReactJS, Apollo, Typescript
+Client for the ConvenienceDelivery
 
 ## Screens:
 
 ### Logged Out:
 
-- [ ] Home
+- [V] Home
 - [ ] Phone Login
 - [ ] Verify Phone Number
-- [ ] Social Login
+- [V] Home
+- [ ] New
+- [ ] Hot
+- [V] Cart
+- [V] Product
+- [V] ProductItem
+- [ ] Tag
 
 ### Logged In:
+- [ ] Payment
 
-- [ ] Home
-- [ ] Ride
-- [ ] Edit Account
-- [ ] Settings
-- [ ] Places
-- [ ] Add Place
-- [ ] Find Address
-- [ ] Challenge: Ride History
