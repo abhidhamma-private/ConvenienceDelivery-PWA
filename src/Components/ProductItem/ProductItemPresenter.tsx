@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 import QuantityInput from '../QuantityInput';
+import { toast } from 'react-toastify';
 
 const Container = styled.div`
   border: 3px solid #e9e9e9;
@@ -53,11 +54,26 @@ const Order = styled.div`
     display: grid;
     align-self: center;
     text-align-last: center;
-    margin: 10px;
+    margin: 1vw;
   }
 `;
+
 class ProductItemPresenter extends React.Component<any, any, any> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ProductCount: 0,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  public handleChange(ProductCount) {
+    this.setState({ ProductCount: `${ProductCount}` });
+  }
   public render() {
+    console.log(this.state);
+    console.log(this.props);
+    console.log('상위');
+
     return (
       <Container key={this.props.key}>
         <ThumbnailWraper>
@@ -67,11 +83,32 @@ class ProductItemPresenter extends React.Component<any, any, any> {
           {this.props.name} {this.props.price}원
         </Info>
         <Order>
-          <Button onClick={this.props.toggleCart} value={'담기'} />
-          <QuantityInput />
+          <Button onClick={this.addOrDeleteToCart} value={'담기/빼기'} />
+          <QuantityInput
+            ProductCount={this.state.ProductCount}
+            handleChange={this.handleChange}
+          />
         </Order>
       </Container>
     );
   }
+
+  public addOrDeleteToCart = () => {
+    const ProductCount = this.state.ProductCount;
+    if (ProductCount === 0) {
+      toast.warn('빼거나 담을 갯수를 입력해주세요.');
+    } else if (ProductCount > 0) {
+      for (let i = 1; i <= ProductCount; i++) {
+        this.props.toggleCart();
+      }
+      toast.success(
+        `${this.props.name} ${ProductCount}개가 장바구니에 담겼습니다.`
+      );
+    } else if (ProductCount < 0) {
+      toast.success(
+        `${this.props.name} ${ProductCount}개가 장바구니에서 빠졌습니다.`
+      );
+    }
+  };
 }
 export default ProductItemPresenter;

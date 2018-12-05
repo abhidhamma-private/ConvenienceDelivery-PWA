@@ -10,13 +10,15 @@ const Product = styled.div`
   height: 130vh;
   background: ${props => props.theme.greyColor};
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(25vw, 1fr));
   grid-gap: 1vw;
 `;
 
 class ProductPresenter extends React.Component<any, any, any> {
   public render() {
     const data = this.props.data;
+    const category = this.props.category;
     return (
       <Container>
         <Helmet>
@@ -24,9 +26,9 @@ class ProductPresenter extends React.Component<any, any, any> {
         </Helmet>
         <Product>
           {data &&
-            data.onSale &&
-            data.onSale.map(singleProductData => (
-              <ProductItem data={singleProductData} />
+            data[category] &&
+            data[category].map(categoryData => (
+              <ProductItem data={categoryData} />
             ))}
         </Product>
       </Container>

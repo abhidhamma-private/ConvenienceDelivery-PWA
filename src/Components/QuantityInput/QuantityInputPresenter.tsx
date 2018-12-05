@@ -7,8 +7,8 @@ const Container = styled.div`
   cursor: pointer;
   color: #fff;
   font-weight: 550;
-  width: 80px;
-  height: 40px;
+  width: 12vw;
+  height: 4vh;
   line-height: 0.875rem;
   font-size: 0.875rem;
 
@@ -44,12 +44,18 @@ class QuantityInput extends React.Component<any, any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      ProductCount: 0,
+      ProductCount: this.props.ProductCount,
     };
-    this.MinusCount = this.MinusCount.bind(this);
-    this.PlusCount = this.PlusCount.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  public handleChange(e) {
+    this.props.onProductCountChange(document.querySelector('Count'));
   }
   public render() {
+    console.log(this.state);
+    console.log(this.props);
+    console.log('하위');
+
     return (
       <Container>
         <Minus onClick={this.MinusCount}>-</Minus>
@@ -58,11 +64,14 @@ class QuantityInput extends React.Component<any, any, any> {
       </Container>
     );
   }
-
-  public MinusCount = () =>
+  public MinusCount = () => {
     this.setState({ ProductCount: this.state.ProductCount - 1 });
-  public PlusCount = () =>
+    this.props.handleChange(this.state.ProductCount + 1);
+  };
+  public PlusCount = () => {
     this.setState({ ProductCount: this.state.ProductCount + 1 });
+    this.props.handleChange(this.state.ProductCount + 1);
+  };
 }
 
 export default QuantityInput;

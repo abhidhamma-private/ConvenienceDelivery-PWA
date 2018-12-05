@@ -26,7 +26,7 @@ const LoggedOutRoutes: React.SFC = () => (
     <Route path={'/login'} exact={true} component={Login} />
     <Route path={'/phone-login'} component={PhoneLogin} />
     <Route path={'/verify-phone'} component={VerifyPhone} />
-    <Route path={'/cart'} exact={true} component={Cart} />
+    <Route path={'/cart'} component={Cart} />
     <Route path={'/hot'} exact={true} component={Hot} />
     <Route path={'/new'} exact={true} component={New} />
     <Route path={'/tag'} exact={true} component={Tag} />

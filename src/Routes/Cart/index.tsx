@@ -1,6 +1,3 @@
-import React from 'react';
-import withLayout from 'src/lib/withLayout';
+import CartContainer from './CartContainer';
 
-const R = () => <span>장바구니</span>;
-
-export default withLayout(R);
+export default CartContainer;

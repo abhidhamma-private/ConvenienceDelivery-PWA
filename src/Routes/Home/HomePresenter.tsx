@@ -1,10 +1,9 @@
 import React from 'react';
-import withLayout from 'src/lib/withLayout';
 import Product from 'src/Components/Product';
 
-class HomePresenter extends React.Component<any, {}> {
+class HomePresenter extends React.Component<any, any, any> {
   public render() {
-    return <Product />;
+    return <Product category="onSale" data={this.props.data} />;
   }
 }
-export default withLayout(HomePresenter);
+export default HomePresenter;

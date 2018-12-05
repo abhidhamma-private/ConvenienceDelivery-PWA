@@ -8,9 +8,10 @@ const Container = styled.input`
   cursor: pointer;
   color: #fff;
   font-weight: 550;
-  padding: 0.5rem 0.875rem;
+  width: 16vw;
+  height: 4vh;
   line-height: 0.875rem;
-  font-size: 0.875rem;
+  font-size: 0.775rem;
 `;
 
 interface IProps {

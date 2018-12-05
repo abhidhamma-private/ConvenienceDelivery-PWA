@@ -12,7 +12,7 @@ const AppContainer = ({ data }) => (
     <ThemeProvider theme={theme}>
       <AppPresenter isLoggedIn={false} />
     </ThemeProvider>
-    <ToastContainer draggable={true} position={'bottom-center'} />
+    <ToastContainer draggable={true} position={'top-center'} />
   </React.Fragment>
 );
 

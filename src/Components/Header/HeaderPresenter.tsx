@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'src/Components/Button';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import CartNumber from '../CartNumber';
 const Container = styled.div`
   width: 100vw;
   height: 8vh;
@@ -81,6 +82,7 @@ const Header: React.SFC = () => (
       <Cart>
         <Link to="/cart">
           <Button value={'장바구니'} />
+          <CartNumber />
         </Link>
       </Cart>
     </Container>
